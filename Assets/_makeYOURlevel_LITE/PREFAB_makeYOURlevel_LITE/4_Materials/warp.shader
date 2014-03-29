@@ -46,7 +46,7 @@
 				 if(w.z > 0.0){
 				  warp_amount = 0.0;
 				  }
-				//warp_amount = 0.0;
+				 //warp_amount = 0.0;
 				const float4 w_warped = lerp(w,camera_direction,warp_amount); // (1- warp_amount) * w + warp_amount * camera_direction				
 			    ////WARPING ALGORITHM ENDS HERE
 			    
