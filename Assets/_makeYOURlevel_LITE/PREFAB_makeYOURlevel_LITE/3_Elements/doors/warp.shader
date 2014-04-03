@@ -44,11 +44,7 @@
 				//float4 circle  = float4 get_circle(w,camera_direction);
 				//float4 s_point = float4 get_point(circle, camera_direction);
 				
-			    float warp_amount = min(w_mag/16.0, 1.0);
-				if(w.z > 0.0){
-				  warp_amount = 0.0;
-				  }
-				warp_amount = 0.0;
+				const float warp_amount = min(w_mag/16.0, 1.0);
 				const float4 w_warped = lerp(w,camera_direction,warp_amount);
 				
 			    ////WARPING ALGORITHM ENDS HERE
