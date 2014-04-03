@@ -52,10 +52,23 @@
      <Compile Include="Assets\Standard Assets\Scripts\DragRigidbody.js" />
      <Compile Include="Assets\Standard Assets\Scripts\FPSWalker.js" />
      <Compile Include="Assets\Standard Assets\Scripts\TimedObjectDestructor.js" />
+     <None Include="Assets\piano\piano_chair\Materials\warp2.shader" />
      <None Include="Assets\_makeYOURlevel_LITE\PREFAB_makeYOURlevel_LITE\4_Materials\warp.shader" />
      <None Include="Assets\Standard Assets\Blob-Shadow\ShadowProjection.shader" />
+     <None Include="Assets\TableWood\Materials\warp.shader" />
+     <None Include="Assets\Chairs and sofas pack\Src\Materials\sofa1&amp;2\warp.shader" />
+     <None Include="Assets\Chairs and sofas pack\Readme.txt" />
+     <None Include="Assets\TableMetal\Materials\warp.shader" />
+     <None Include="Assets\Bookshelf\FBX\Materials\warp.shader" />
+     <None Include="Assets\Chairs and sofas pack\Src\Fbx\Materials\design1\warp.shader" />
+     <None Include="Assets\Chairs and sofas pack\Src\Materials\warp.shader" />
+     <None Include="Assets\Chairs and sofas pack\Src\Fbx\Materials\tabouret\warp.shader" />
+     <None Include="Assets\Bed\Materials\warp2.shader" />
+     <None Include="Assets\Bed\Materials\warp.shader" />
      <None Include="Assets\Standard Assets\Water\Sources\FX-Water Simple.shader" />
+     <None Include="Assets\piano\Materials\warp.shader" />
      <None Include="Assets\_makeYOURlevel_LITE\PREFAB_makeYOURlevel_LITE\3_Elements\doors\warp.shader" />
+     <None Include="Assets\Chairs and sofas pack\Src\Fbx\Materials\warp.shader" />
      <None Include="Assets\Standard Assets\Gem Rendering\diamond shader.shader" />
  <Reference Include="uScriptRuntime">
  <HintPath>Assets\_makeYOURlevel_LITE\PREFAB_makeYOURlevel_LITE\6_scripts\uScriptRuntime\uScriptRuntime.dll</HintPath>

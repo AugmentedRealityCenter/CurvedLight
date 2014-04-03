@@ -86,6 +86,7 @@ public static class MeshHelper
 				int a = GetNewVertex4 (i1, i2);
 				int b = GetNewVertex4 (i2, i3);
 				int c = GetNewVertex4 (i3, i1);
+
 				indicess[sm].Add (i1);
 				indicess[sm].Add (a);
 				indicess[sm].Add (c);
