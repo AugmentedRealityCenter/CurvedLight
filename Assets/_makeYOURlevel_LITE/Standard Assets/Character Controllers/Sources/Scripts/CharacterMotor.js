@@ -4,30 +4,14 @@
 
 // Does this script currently respond to input?
 var canControl : boolean = true;
-
 var useFixedUpdate : boolean = true;
 
-var count : int = 0;
-var total :int = 10;
-var counttext : GUIText;
-var TotalNum : GUIText;
-
-function Start(){
-	TotalNum.text = "Total num of eggs is : " + total.ToString();
-	setCountText();
+function Update () {
+	
+	if (!useFixedUpdate)
+		UpdateFunction();
 }
 
-function OnTriggerEnter (other : Collider) {
-	if ( other.gameObject.tag == "Egg"){
-		other.gameObject.SetActive(false);
-		count = count + 1 ;
-		setCountText();
-	}
-}
-function setCountText(){
-	//TotalNum.text = "Total Number of Eggs is 2.";
-	counttext.text = "Count: " + count.ToString();
-}
 // For the next variables, @System.NonSerialized tells Unity to not serialize the variable or show it in the inspector view.
 // Very handy for organization!
 
@@ -352,10 +336,7 @@ function FixedUpdate () {
 		UpdateFunction();
 }
 
-function Update () {
-	if (!useFixedUpdate)
-		UpdateFunction();
-}
+
 
 private function ApplyInputVelocityChange (velocity : Vector3) {	
 	if (!canControl)
