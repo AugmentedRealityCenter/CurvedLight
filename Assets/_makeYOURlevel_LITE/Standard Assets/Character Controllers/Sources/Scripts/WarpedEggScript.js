@@ -1,6 +1,5 @@
 ﻿#pragma strict
 
-// Does this script currently respond to input?
 var count : int = 0;
 var counttext : GUIText;
 var eggs : GameObject[]; // store the egg objects
@@ -19,8 +18,8 @@ function Start(){
 	}
 	// randomly pick up two eggs to be active
 	// avoid generate one egg only
-	rand1 = Random.Range(1,5);
-	rand2 = Random.Range(5,10);
+	rand1 = Random.Range(1,eggs.Length / 2);
+	rand2 = Random.Range(eggs.Length / 2, eggs.Length);
 	eggs[rand1].SetActive(true);
 	eggs[rand2].SetActive(true);
 }
@@ -42,8 +41,7 @@ function OnTriggerEnter (other : Collider) {
 			other.gameObject.SetActive(false);
 			count = count + 1 ;
 			setCountText();
-	}
-	
+	}	
 }
 function setCountText(){
 	counttext.text = "Count: " + count.ToString();
