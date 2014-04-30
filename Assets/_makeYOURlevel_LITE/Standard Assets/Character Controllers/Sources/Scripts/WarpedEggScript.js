@@ -29,7 +29,7 @@ function Update() {
 
 function OnTriggerEnter (other : Collider) {
 		// active another two eggs each time
-		if(count >= 1 && count < 100){ // set the maximum number for the count
+		if(count >= 1 && count < 1000){ // set the maximum number for the count
 			eggs[rand1].SetActive(false);
 			eggs[rand2].SetActive(false);
 			rand1 = Random.Range(1,eggs.Length);

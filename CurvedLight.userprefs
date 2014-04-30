@@ -1,16 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\WarpedEggScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\Smooth_arc_all.cs">
     <Files>
-      <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\WarpedEggScript.js" Line="48" Column="2" />
+      <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\Smooth_arc_all.cs" Line="15" Column="5" />
+      <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\WarpedEggScript.js" Line="1" Column="1" />
       <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\CharacterMotor.js" Line="1" Column="1" />
-      <File FileName="Assets\_makeYOURlevel_LITE\PREFAB_makeYOURlevel_LITE\4_Materials\warp.shader" Line="1" Column="1" />
+      <File FileName="Assets\_makeYOURlevel_LITE\PREFAB_makeYOURlevel_LITE\4_Materials\warp.shader" Line="44" Column="5" />
       <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" Line="1" Column="1" />
-      <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="1" Column="1" />
-      <File FileName="Assets\OVR\Editor\OVRPlayerControllerEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets\_makeYOURlevel_LITE\PREFAB_makeYOURlevel_LITE\6_scripts\uScriptRuntime\Nodes\Conditions\Comparison\uScriptCon_GameObjectHasTag.cs" Line="1" Column="1" />
-      <File FileName="Assets\OVR\Scripts\OVRCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\_makeYOURlevel_LITE\Standard Assets\Character Controllers\Sources\Scripts\WarpedEggScript.js" Line="43" Column="19" />
+      <File FileName="Assets\BigBoxBound\Bound.js" Line="4" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
