@@ -1,7 +1,6 @@
 ﻿#pragma strict
 
 var count : int = 0;
-var counttext : GUIText;
 var eggs : GameObject[]; // store the egg objects
 private var rand1 : int; // num 1 active egg
 private var rand2 : int; // num 2 active egg
@@ -44,5 +43,9 @@ function OnTriggerEnter (other : Collider) {
 	}	
 }
 function setCountText(){
-	counttext.text = "Count: " + count.ToString();
+	var t : TextMesh[];
+	t = GameObject.FindObjectsOfType(TextMesh);
+	for(var i=0;i<t.Length;i++){
+		t[i].text = "Count: " + count.ToString();
+	}
 }
