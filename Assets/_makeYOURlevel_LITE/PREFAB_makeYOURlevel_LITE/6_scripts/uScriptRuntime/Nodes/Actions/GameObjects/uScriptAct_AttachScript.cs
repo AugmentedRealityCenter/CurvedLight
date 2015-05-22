@@ -49,7 +49,7 @@ public class uScriptAct_AttachScript : uScriptLogic
                {
                   if (currentGameObject != null)
                   {
-                     currentGameObject.AddComponent(tempScript);
+							//currentGameObject.AddComponent("Assets/_makeYOURlevel_LITE/PREFAB_makeYOURlevel_LITE/6_scripts/uScriptRuntime/Nodes/Actions/GameObjects/uScriptAct_AttachScript.cs (52,22)", tempScript);
                   }
                   
                }
