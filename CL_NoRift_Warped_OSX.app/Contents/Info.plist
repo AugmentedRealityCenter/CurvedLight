@@ -5,30 +5,30 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>UnityGameExamplesByM2H</string>
+	<string>CL_NoRift_Warped_OSX</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Unity Player version 4.3.2f1 (0517a5ae8669). (c) 2013 Unity Technologies ApS. All rights reserved.</string>
+	<string>Unity Player version 5.0.2f1 (0b02744d4013). (c) 2015 Unity Technologies ApS. All rights reserved.</string>
 	<key>CFBundleIconFile</key>
-	<string>UnityPlayer.icns</string>
+	<string>PlayerIcon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>unity.YourCompanyName.UnityGameExamplesByM2H</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>UnityGameExamplesByM2H</string>
+	<string>CL_NoRift_Warped_OSX</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>Unity Player version 4.3.2f1</string>
+	<string>Unity Player version 5.0.2f1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4.3.2f1</string>
+	<string>5.0.2f1</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>PlayerApplication</string>
 	<key>UnityBuildNumber</key>
-	<string>0517a5ae8669</string>
+	<string>0b02744d4013</string>
 </dict>
 </plist>
