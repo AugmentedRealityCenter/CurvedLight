@@ -12,6 +12,8 @@
 			
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma target 4.0
+
             #include "UnityCG.cginc"         
                 
             sampler2D _MainTex;
@@ -31,11 +33,11 @@
 
 				//Language reference is at: http://http.developer.nvidia.com/CgTutorial/cg_tutorial_appendix_e.html
 
-				////////////////Begin warping
+				////////////////Begin warping - version 1
 				//We will do all our work in camera space
 				//Get the original vertex, in camera space
 				//transform position from object space to eye space
-				const float4 w = mul( UNITY_MATRIX_MV, v.vertex); //model and view
+/*				const float4 w = mul( UNITY_MATRIX_MV, v.vertex); //model and view
 				
 				////WARPING ALGORITHM STARTS HERE
 				//w_mag appears to be correct // Get the original distnace of the vertex from camera
@@ -53,11 +55,49 @@
 			    
 			 
 			    
-			    o.pos = mul( UNITY_MATRIX_P, w_warped);//w_warped);
-			    //end warping
+			    o.pos = mul( UNITY_MATRIX_P, w_warped);//w_warped);*/
+			    //end warping - vesrion 1
+
+				//begin warping - version 2
+				const float4 p_o_1 = mul(UNITY_MATRIX_MV, v.vertex); //model and view
+				const float4 p_orig = p_o_1; // float4(4.0 / sqrt(2.0), 4.0 / sqrt(2.0), 3.0, 0);//mul(UNITY_MATRIX_MV, v.vertex); //model and view
+				float4 p_res;
+				const float view_z = -2.0;
+
+				const float4 p_xvec = float4(p_orig.x, p_orig.y, 0.0, 0.0);
+				if (length(p_xvec) > 0.0) {
+					const float4 p_xvec_n = normalize(p_xvec);
+					const float x_circ1 = dot(p_orig, p_xvec_n); //Project point onto coordinate system of the circle. y is always 0
+					const float4 p_toWork = float4(x_circ1, 0, p_orig.z, 0.0);
+
+					if (p_toWork.x > 0.0) {
+						const float signed_r = 0.5*(p_toWork.x + p_toWork.z*p_toWork.z / p_toWork.x);
+						const float x_minus_r = p_toWork.x - signed_r;
+						const float a = sqrt(x_minus_r*x_minus_r + p_toWork.z*p_toWork.z - view_z*view_z);
+						const float x_prime = signed_r - sign(signed_r)*a;
+						//TODO: Use appropriate source of PI
+						const float theta = 3.1415927 - atan2(sign(view_z)*p_toWork.z, sign(signed_r)*x_minus_r);
+						const float mag = max(length(p_toWork), theta*abs(signed_r));
+						
+						const float4 p_new = float4(x_prime, 0.0, view_z, 0.0);
+						const float4 p_new2 = mag*normalize(p_new);
+
+						const float4 p_final = float4(p_new2.x*p_xvec_n.x, p_new2.x*p_xvec_n.y, p_new2.z, 1.0);
+						p_res = p_final;
+					}
+					else {
+						p_res = p_orig;
+					}
+				}
+				else {
+					p_res = p_orig;
+				}
+				
+				o.pos = mul(UNITY_MATRIX_P, p_res);
+				//end warping - version 2
 			    
 			    o.uv = TRANSFORM_TEX (v.texcoord, _MainTex);
-			    o.color = ShadeVertexLights(v.vertex, v.normal);
+				o.color = ShadeVertexLights(v.vertex, v.normal);
 			    
 			    return o;
 			}
