@@ -59,13 +59,40 @@
 			    //end warping - vesrion 1
 
 				//begin warping - version 2
-				const float4 p_o_1 = mul(UNITY_MATRIX_MV, v.vertex); //model and view
-				const float4 p_orig = p_o_1; // float4(4.0 / sqrt(2.0), 4.0 / sqrt(2.0), 3.0, 0);//mul(UNITY_MATRIX_MV, v.vertex); //model and view
-				float4 p_res;
-				const float view_z = -2.0;
+				const float4 p_orig = mul(UNITY_MATRIX_MV, v.vertex); //model and view
+				float4 p_res = p_orig;
+				const float view_z = -1.0;
 
-				const float4 p_xvec = float4(p_orig.x, p_orig.y, 0.0, 0.0);
-				if (length(p_xvec) > 0.0) {
+				const float4 p_xvec = float4((p_orig.x), (p_orig.y), 0.0, 0.0);
+				if (p_orig.z <= 0 && length(p_xvec) > 0.0) {
+					const float4 p_xvec_n = normalize(p_xvec);
+					const float x_plane = dot(p_orig, p_xvec_n); //Project point onto coordinate system of the plane. y is always 0
+					const float4 p_toWork = float4(x_plane, 0, p_orig.z, 0.0);
+
+					if (abs(p_toWork.x) > 0.0) {
+						const float x = p_toWork.x;
+						const float y = p_toWork.z;
+						const float m = abs(y)/sqrt(abs(x));
+							
+						const float z = 2*abs(y)/(m*m);
+						const float arcsinh = log(z+sqrt(1+z*z));
+						
+						const float mag_1 = m*m*arcsinh;
+						const float mag_2 = 2*y*sqrt(1+4*y*y/(m*m*m*m));
+						const float mag = abs((1.0/4)*(2*abs(y)*sqrt(1+4*y*y/(m*m*m*m))+m*m*arcsinh));
+						const float x_prime = (view_z*view_z)/(m*m);
+						const float4 p_new = mag*normalize(float4(sign(x)*x_prime,0,view_z,0));
+						
+						const float4 p_final = float4(p_new.x*p_xvec_n.x, p_new.x*p_xvec_n.y, p_new.z, 1.0);
+						p_res = p_final;
+						
+						//o.color = float4(abs(mag_2 + 20.3961) < 0.0001 ? 1 : 0,0,0,1);
+						
+					}
+				} 
+				
+				
+				/*if (length(p_xvec) > 0.0) {
 					const float4 p_xvec_n = normalize(p_xvec);
 					const float x_circ1 = dot(p_orig, p_xvec_n); //Project point onto coordinate system of the circle. y is always 0
 					const float4 p_toWork = float4(x_circ1, 0, p_orig.z, 0.0);
@@ -91,7 +118,7 @@
 				}
 				else {
 					p_res = p_orig;
-				}
+				}*/
 				
 				o.pos = mul(UNITY_MATRIX_P, p_res);
 				//end warping - version 2
